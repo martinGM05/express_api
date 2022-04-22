@@ -5,6 +5,17 @@ app.use(express.json())
 
 const port = 3000
 
+app.get('/v1/explorers', (req, res) => {
+    console.log(`Api Explorer GET ALL requests ${new Date()}`)
+    const explorer1 = {id: 1, name: "Martin1"}
+    const explorer2 = {id: 2, name: "Martin2"}
+    const explorer3 = {id: 3, name: "Martin3"}
+    const explorer4 = {id: 4, name: "Martin4"}
+    const explorers = [explorer1, explorer2, explorer3, explorer4]
+    res.status(200).json(explorers)
+})
+
+
 app.listen(port, () => {
     console.log(`Example app listenng on port ${port}`)
 })
